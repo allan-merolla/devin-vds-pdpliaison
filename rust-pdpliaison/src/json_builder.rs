@@ -155,8 +155,8 @@ fn build_category_json(
     if let Some(ref content) = cat.xml_content {
         json.push_str(&l2);
         json.push_str(&format!(
-            "\"Content\": \"{}\"",
-            content.replace('\"', "\\\"")
+            "\"Content\": {}",
+            json_escape_string(content)
         ));
         if !cat.attributes.is_empty() {
             json.push(',');
