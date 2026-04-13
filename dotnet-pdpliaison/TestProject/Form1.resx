@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="txtContent.Text" xml:space="preserve">
+    <value>&lt;license-text version="1.0"&gt;
+  &lt;key&gt;3CB41E62A50B86ACA2010D967ED05DCA14741CDAC2A08FBF98F4B6CB5FFE7FF4&lt;/key&gt;
+  &lt;info&gt;
+    &lt;issue-date&gt;2014-06-12T08:57:45+10:00&lt;/issue-date&gt;
+    &lt;type&gt;internal&lt;/type&gt;
+    &lt;organization-id&gt;10000&lt;/organization-id&gt;
+    &lt;organization-name&gt;ViewDS&lt;/organization-name&gt;
+    &lt;contact-email&gt;test@viewds.com&lt;/contact-email&gt;
+    &lt;comment&gt;Mainline server #1. copy&lt;/comment&gt;
+  &lt;/info&gt;
+  &lt;product id="http://viewds.com/licensing/ViewDS-Directory-Server"&gt;
+    &lt;feature id="http://viewds.com/licensing/ViewDS-Directory-Server/runs-until"&gt;
+      &lt;parameter name="date"&gt;
+        &lt;value&gt;2015-06-01T00:00:00+10:00&lt;/value&gt;
+      &lt;/parameter&gt;
+    &lt;/feature&gt;
+    &lt;feature id="http://viewds.com/licensing/ViewDS-Directory-Server/host-restriction"&gt;
+      &lt;parameter name="hostid"&gt;
+        &lt;value&gt;70-18-8B-64-CC-4A&lt;/value&gt;
+      &lt;/parameter&gt;
+      &lt;parameter name="keybase"&gt;
+        &lt;value&gt;6000&lt;/value&gt;
+      &lt;/parameter&gt;
+    &lt;/feature&gt;
+    &lt;feature id="http://viewds.com/licensing/ViewDS-Directory-Server/pdp"&gt;
+      &lt;parameter name="enabled"&gt;
+        &lt;value&gt;true&lt;/value&gt;
+      &lt;/parameter&gt;
+    &lt;/feature&gt;
+    &lt;feature id="http://viewds.com/licensing/ViewDS-Directory-Server/entry-number"&gt;
+      &lt;parameter name="value" /&gt;
+    &lt;/feature&gt;
+    &lt;feature id="http://viewds.com/licensing/ViewDS-Directory-Server/enforce-entry-number"&gt;
+      &lt;parameter name="enabled" /&gt;
+    &lt;/feature&gt;
+    &lt;feature id="http://viewds.com/licensing/ViewDS-Directory-Server/tscp-proxy"&gt;
+      &lt;parameter name="enabled" /&gt;
+    &lt;/feature&gt;
+  &lt;/product&gt;
+&lt;/license-text&gt;</value>
+  </data>
+  <data name="txtXacmlExtension.Text" xml:space="preserve">
+    <value>&lt;Policy xmlns="urn:oasis:names:tc:xacml:3.0:core:schema:wd-17" PolicyId="http://viewDS.com/Example/RoleTest/Policy1" Version="1.0" RuleCombiningAlgId="urn:oasis:names:tc:xacml:3.0:rule-combining-algorithm:deny-overrides"&gt;
+   &lt;Description&gt;Role Tests 1&lt;/Description&gt;
+   &lt;Target/&gt;
+   &lt;Rule RuleId="http://viewDS.com/Example/RoleTest/Policy1/Rule1" Effect="Permit"&gt;
+     &lt;Description&gt;&lt;/Description&gt;
+     &lt;Target/&gt;
+     &lt;Condition&gt;
+       &lt;Apply FunctionId="urn:oasis:names:tc:xacml:1.0:function:any-of"&gt;
+         &lt;Function FunctionId="urn:oasis:names:tc:xacml:1.0:function:string-equal"/&gt;
+         &lt;AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string"&gt;asherma&lt;/AttributeValue&gt;
+         &lt;AttributeDesignator Category="urn:oasis:names:tc:xacml:1.0:subject-category:access-subject" AttributeId="urn:oasis:names:tc:xacml:1.0:subject:subject-id" DataType="http://www.w3.org/2001/XMLSchema#string" MustBePresent="false"/&gt;
+       &lt;/Apply&gt;
+     &lt;/Condition&gt;
+   &lt;/Rule&gt;
+&lt;/Policy&gt;</value>
+  </data>
+</root>

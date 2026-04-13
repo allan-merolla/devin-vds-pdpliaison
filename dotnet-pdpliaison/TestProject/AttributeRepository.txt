@@ -1,0 +1,30 @@
+<AttributeRepository>
+	<Attributes Category="urn:oasis:names:tc:xacml:1.0:subject-category:access-subject">
+		<Attribute AttributeId="urn:oasis:names:tc:xacml:2.0:subject:role">
+			<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string"> Staff </AttributeValue>
+			<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string"> Coordinator </AttributeValue>
+			<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string"> Manager </AttributeValue>
+			<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string"> COO </AttributeValue>
+			<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string"> CEO </AttributeValue>
+		</Attribute>
+		<Attribute AttributeId="urn:oasis:names:tc:xacml:2.0:subject:subject-id">
+			<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string"> Alice P </AttributeValue>
+			<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string"> John S </AttributeValue>
+			<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string"> Margaret H </AttributeValue>
+			<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string"> Steve D </AttributeValue>
+			<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string"> Alex N </AttributeValue>
+			<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string"> Nik L </AttributeValue>
+			<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string"> Morton D </AttributeValue>
+		</Attribute>
+	</Attributes>
+	<Attributes Category="urn:oasis:names:tc:xacml:3.0:attribute-category:resource">
+		<Attribute AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id">
+			<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string"> Report 1 </AttributeValue>
+			<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string"> Report 2 </AttributeValue>
+			<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string"> Report 3 </AttributeValue>
+			<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string"> Report 4 </AttributeValue>
+			<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string"> Report 5 </AttributeValue>
+		</Attribute>
+	</Attributes>
+</AttributeRepository>
+
