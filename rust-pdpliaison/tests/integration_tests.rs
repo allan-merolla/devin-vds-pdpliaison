@@ -448,6 +448,24 @@ fn test_build_json_request_indented() {
 }
 
 #[test]
+fn test_json_content_escaping_special_chars() {
+    let mut req = AuthorizationRequest::new();
+    req.set_content(
+        attribute_category::RESOURCE,
+        "<xml>\n\t\"special\" content with \\backslash\r\nand newlines</xml>",
+    );
+
+    let json = json_builder::build_json_request(&req, false);
+    // Should NOT contain raw newlines/tabs inside the JSON string
+    assert!(!json.contains("\n\t\"special\""));
+    // Should contain properly escaped versions
+    assert!(json.contains("\\n"));
+    assert!(json.contains("\\t"));
+    assert!(json.contains("\\\\backslash"));
+    assert!(json.contains("\\\"special\\\""));
+}
+
+#[test]
 fn test_json_request_return_policy_id_list() {
     let mut req = AuthorizationRequest::with_options(false, true);
     req.add_element(
