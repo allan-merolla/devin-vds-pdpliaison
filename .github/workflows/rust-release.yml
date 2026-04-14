@@ -1,0 +1,82 @@
+name: Release PDP Liaison
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  build-linux:
+    name: Build Linux x86_64
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: rust-pdpliaison
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - name: Build release
+        run: cargo build --release
+      - name: Run tests
+        run: cargo test --verbose
+      - name: Package
+        run: |
+          mkdir -p staging
+          cp target/release/libpdp_liaison.so staging/ 2>/dev/null || true
+          cp target/release/libpdp_liaison.a staging/ 2>/dev/null || true
+          cp pdp_liaison.h staging/
+          cd staging && tar czf ../pdp-liaison-linux-x64.tar.gz *
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pdp-liaison-linux-x64
+          path: rust-pdpliaison/pdp-liaison-linux-x64.tar.gz
+
+  build-windows:
+    name: Build Windows x86_64
+    runs-on: windows-latest
+    defaults:
+      run:
+        working-directory: rust-pdpliaison
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - name: Build release
+        run: cargo build --release
+      - name: Run tests
+        run: cargo test --verbose
+      - name: Package
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force staging
+          Copy-Item target/release/pdp_liaison.dll staging/ -ErrorAction SilentlyContinue
+          Copy-Item target/release/pdp_liaison.dll.lib staging/ -ErrorAction SilentlyContinue
+          Copy-Item target/release/pdp_liaison.lib staging/ -ErrorAction SilentlyContinue
+          Copy-Item pdp_liaison.h staging/
+          Compress-Archive -Path staging/* -DestinationPath pdp-liaison-windows-x64.zip
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pdp-liaison-windows-x64
+          path: rust-pdpliaison/pdp-liaison-windows-x64.zip
+
+  release:
+    name: Create GitHub Release
+    needs: [build-linux, build-windows]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          generate_release_notes: true
+          files: |
+            artifacts/pdp-liaison-linux-x64/pdp-liaison-linux-x64.tar.gz
+            artifacts/pdp-liaison-windows-x64/pdp-liaison-windows-x64.zip

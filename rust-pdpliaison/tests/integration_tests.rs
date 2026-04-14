@@ -844,7 +844,7 @@ fn test_ffi_request_lifecycle() {
         pdp_liaison::ffi::pdp_string_free(uid);
 
         // Get JSON
-        let json = pdp_liaison::ffi::pdp_request_to_json(req, false);
+        let json = pdp_liaison::ffi::pdp_request_to_json(req, 0);
         assert!(!json.is_null());
         let json_str = CStr::from_ptr(json).to_str().unwrap();
         assert!(json_str.contains("testuser"));
