@@ -68,7 +68,7 @@ char *pdp_request_to_xml(const AuthorizationRequest *request);
 /* ── MultiRequest ── */
 MultiRequest *pdp_multi_request_create(int return_policy_id_list);
 void pdp_multi_request_free(MultiRequest *multi_request);
-void pdp_multi_request_add(MultiRequest *multi_request, AuthorizationRequest *request);
+int pdp_multi_request_add(MultiRequest *multi_request, AuthorizationRequest *request);
 
 /* ── Evaluation ── */
 AuthorizationResponse *pdp_connector_evaluate(const PdpConnector *connector,

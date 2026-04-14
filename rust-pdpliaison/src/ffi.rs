@@ -127,13 +127,13 @@ pub extern "C" fn pdp_connector_register_obligation(
 #[no_mangle]
 pub extern "C" fn pdp_connector_set_accept_invalid_certs(
     connector: *mut PdpConnector,
-    accept: bool,
+    accept: i32,
 ) {
     if connector.is_null() {
         return;
     }
     let conn = unsafe { &mut *connector };
-    conn.config_mut().accept_invalid_certs = accept;
+    conn.config_mut().accept_invalid_certs = accept != 0;
 }
 
 // ══════════════════════════════════════════════════════
@@ -149,21 +149,21 @@ pub extern "C" fn pdp_request_create() -> *mut AuthorizationRequest {
 
 /// Create a new authorization request with trace option.
 #[no_mangle]
-pub extern "C" fn pdp_request_create_with_trace(trace: bool) -> *mut AuthorizationRequest {
-    Box::into_raw(Box::new(AuthorizationRequest::with_trace(trace)))
+pub extern "C" fn pdp_request_create_with_trace(trace: i32) -> *mut AuthorizationRequest {
+    Box::into_raw(Box::new(AuthorizationRequest::with_trace(trace != 0)))
 }
 
 /// Create a new authorization request with all options.
 #[no_mangle]
 pub extern "C" fn pdp_request_create_with_options(
-    trace: bool,
-    return_policy_id_list: bool,
-    combine_policies: bool,
+    trace: i32,
+    return_policy_id_list: i32,
+    combine_policies: i32,
 ) -> *mut AuthorizationRequest {
     Box::into_raw(Box::new(AuthorizationRequest::with_all_options(
-        trace,
-        return_policy_id_list,
-        combine_policies,
+        trace != 0,
+        return_policy_id_list != 0,
+        combine_policies != 0,
     )))
 }
 
@@ -262,13 +262,13 @@ pub extern "C" fn pdp_request_get_uid(request: *const AuthorizationRequest) -> *
 #[no_mangle]
 pub extern "C" fn pdp_request_to_json(
     request: *const AuthorizationRequest,
-    indented: bool,
+    indented: i32,
 ) -> *mut c_char {
     if request.is_null() {
         return string_to_cstring("");
     }
     let req = unsafe { &*request };
-    let json = crate::json_builder::build_json_request(req, indented);
+    let json = crate::json_builder::build_json_request(req, indented != 0);
     string_to_cstring(&json)
 }
 
@@ -289,8 +289,8 @@ pub extern "C" fn pdp_request_to_xml(request: *const AuthorizationRequest) -> *m
 
 /// Create a new multi-request. Free with `pdp_multi_request_free`.
 #[no_mangle]
-pub extern "C" fn pdp_multi_request_create(return_policy_id_list: bool) -> *mut MultiRequest {
-    Box::into_raw(Box::new(MultiRequest::new(return_policy_id_list)))
+pub extern "C" fn pdp_multi_request_create(return_policy_id_list: i32) -> *mut MultiRequest {
+    Box::into_raw(Box::new(MultiRequest::new(return_policy_id_list != 0)))
 }
 
 /// Free a multi-request.
